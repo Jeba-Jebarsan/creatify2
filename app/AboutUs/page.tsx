@@ -78,7 +78,7 @@ const AboutPage: React.FC = () => {
               +94 70 794 0599
             </p>
             <p className='text-lg font-semibold text-gray-900 mt-4'>
-              Thank you for choosing CreatifyAI. We look forward to being part of your creative journey and helping you achieve your content goals!
+              Thank you! for choosing CreatifyAI. We look forward to being part of your creative journey and helping you achieve your content goals!
             </p>
           </section>
         </article>
