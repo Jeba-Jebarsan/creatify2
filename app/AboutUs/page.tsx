@@ -62,7 +62,7 @@ const AboutPage: React.FC = () => {
               <li>English Grammar Checking</li>
               <li>Tagline and Product Description Generation</li>
               <li>Plagiarism-Free Article Rewriting</li>
-              <li>Text Improvement and Emoji Integration and more...</li>
+              <li>Text Improvement and Emoji Integration and more....</li>
             </ul>
           </section>
           <section>
