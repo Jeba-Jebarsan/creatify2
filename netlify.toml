@@ -1,0 +1,17 @@
+[build]
+  # Command to build your project
+  command = "yarn build"
+
+  # Directory to publish
+  publish = ".next"
+
+# Optional: Define redirects or rewrites if needed
+[[redirects]]
+  from = "/old-path"
+  to = "/new-path"
+  status = 301
+
+[[redirects]]
+  from = "/api/*"
+  to = "/api/index.js"
+  status = 200
