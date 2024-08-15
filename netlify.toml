@@ -1,6 +1,7 @@
 [build]
-  # Command to build your project
-  command = "yarn build"
+  command = "yarn install && yarn lint && yarn build"
+  publish = "build"
+
 
   # Directory to publish
   publish = ".next"
