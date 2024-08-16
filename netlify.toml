@@ -1,10 +1,9 @@
 [build]
   command = "yarn build"
-  publish = "out"  # Ensure this is consistent with your project structure
-
+  publish = "out"  
 [context.production]
   command = "yarn build"
-  publish = "out"  # This can be removed if it's the same as in the [build] section
+  publish = "out"  
 
 # Optional: Define redirects or rewrites if needed
 [[redirects]]
