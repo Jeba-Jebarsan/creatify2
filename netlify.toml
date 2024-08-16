@@ -1,18 +1,14 @@
 [build]
-  command = "yarn install && yarn lint && yarn build"
-  publish = "build"
-
-
-  # Directory to publish
-  publish = ".next"
+command = "yarn build"
+publish = "out"  # Ensure this is correctly specified and consistent with your project structure
 
 # Optional: Define redirects or rewrites if needed
 [[redirects]]
-  from = "/old-path"
-  to = "/new-path"
-  status = 301
+from = "/old-path"
+to = "/new-path"
+status = 301
 
 [[redirects]]
-  from = "/api/*"
-  to = "/api/index.js"
-  status = 200
+from = "/api/*"
+to = "/api/index.js"
+status = 200
