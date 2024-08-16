@@ -3,10 +3,10 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
-        "build": "yarn build",
+        "dev": "yarn dev",
+        "build": "NODE_OPTIONS='--max_old_space_size=4096' yarn build",
         "start": "yarn start",
-        "lint": "next lint",
+        "lint": "yarn lint",
         "db:push": "drizzle-kit push",
         "db:studio": "drizzle-kit studio"
     },
