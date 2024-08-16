@@ -3,9 +3,9 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "yarn dev",
-        "build": "cross-env NODE_OPTIONS=--max_old_space_size=4096 yarn build",
-        "start": "yarn start",
+        "dev": "set NODE_OPTIONS=--max_old_space_size=4096 && yarn dev",
+        "build": "set NODE_OPTIONS=--max_old_space_size=4096 && yarn build",
+        "start": "set NODE_OPTIONS=--max_old_space_size=4096 && yarn start",
         "lint": "yarn lint",
         "db:push": "drizzle-kit push",
         "db:studio": "drizzle-kit studio"

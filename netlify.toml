@@ -1,6 +1,7 @@
 [build]
   command = "yarn build"
-  publish = "out"  
+  publish = "C:/Users/acer/New folder/writ/out"
+
 [context.production]
   command = "yarn build"
   publish = "out"  
