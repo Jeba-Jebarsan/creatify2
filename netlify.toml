@@ -1,9 +1,9 @@
 [build]
-  command = "yarn build"
+  command = "yarn run build"
   publish = "out"
 
 [context.production]
-  command = "yarn build"
+  command = "yarn run build"
   publish = "out"
 
 # Redirects Configuration
