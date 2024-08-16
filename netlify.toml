@@ -1,18 +1,20 @@
 [build]
   command = "yarn build"
-  publish = "C:/Users/acer/New folder/writ/out"
+  publish = "out"
 
 [context.production]
   command = "yarn build"
-  publish = "out"  
+  publish = "out"
 
-# Optional: Define redirects or rewrites if needed
+# Redirects Configuration
 [[redirects]]
   from = "/old-path"
   to = "/new-path"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/api/*"
   to = "/api/index.js"
   status = 200
+  force = true
