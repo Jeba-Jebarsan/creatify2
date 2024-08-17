@@ -1,20 +1,15 @@
 [build]
-  command = "next build"
-  publish = ".next"
-
-[context.production]
-  command = "next build"
-  publish = ".next"
-
-# Redirects Configuration
-[[redirects]]
-  from = "/old-path"
-  to = "/new-path"
-  status = 301
-  force = true
+command = "npm run build"
+publish = ".next"
 
 [[redirects]]
-  from = "/api/*"
-  to = "/api/index.js"
-  status = 200
-  force = true
+from = "/old-path"
+to = "/new-path"
+status = 301
+force = true
+
+[[redirects]]
+from = "/api/*"
+to = "/api/index.js"
+status = 200
+force = true
