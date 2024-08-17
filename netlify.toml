@@ -2,10 +2,6 @@
   command = "next build"
   publish = "out"
 
-[context.production]
-  command = "next build"
-  publish = "out"
-
 # Redirects Configuration
 [[redirects]]
   from = "/old-path"
