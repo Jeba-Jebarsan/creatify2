@@ -1,5 +1,5 @@
 {
-    "name": "writ",
+    "name": "creatify",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -70,6 +70,7 @@
         "lib": "lib"
     },
     "keywords": [],
-    "author": "",
-    "license": "ISC"
+    "author": "Thomas Jebarsan <142016100+Jeba-Jebarsan@users.noreply.github.com>",
+    "license": "ISC",
+    "repository": "https://github.com/Jeba-Jebarsan/Creatify.git"
 }
