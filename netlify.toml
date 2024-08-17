@@ -1,6 +1,10 @@
 [build]
   command = "next build"
-  publish = "out"
+  publish = ".next"
+
+[context.production]
+  command = "next build"
+  publish = ".next"
 
 # Redirects Configuration
 [[redirects]]
