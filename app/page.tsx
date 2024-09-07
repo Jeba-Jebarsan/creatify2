@@ -48,11 +48,8 @@ const Home = () => {
                   <h1 className='text-4xl md:text-6xl md:!leading-snug font-semibold text-center bg-clip-text bg-gradient-to-b from-gray-50 to-gray-100 text-transparent'>
                     The Ultimate AI Content Creation Tool
                   </h1>
-                  
-            <p className='text-base md:text-lg text-foreground/80 mt-6 text-center'>Transform your content creation with CreatifyAI! Our AI-powered tool simplifies generating and optimizing emails, blogs, and social media posts. Enhance your productivity with features like code generation, grammar checking, and tailored text improvements.
 
-Start today and revolutionize your content strategy with the power of AI!</p>
-
+                
             <div className='hidden md:flex relative items-center justify-center mt-8 md:mt-12 w-full'>
               <Link href="/dashboard" className=' flex items-center justify-center w-max rounded-full border-t border-foreground/30 bg-white/20 backdrop-blur-lg px-2 py-1 md:py-2 md:gap-3 shadow-2xl shadow-foreground/40 cursor-pointer select-none'>
               <p className='text-foreground text-sm text-center md:text-base font-medium pl-4 pr-4 lg:marker:pr-0'>
@@ -64,6 +61,12 @@ Start today and revolutionize your content strategy with the power of AI!</p>
               </Button>
               </Link>
             </div>
+
+                  
+            <p className='text-base md:text-lg text-foreground/80 mt-6 text-center'>Transform your content creation with CreatifyAI! Our AI-powered tool simplifies generating and optimizing emails, blogs, and social media posts. Enhance your productivity with features like code generation, grammar checking, and tailored text improvements.
+
+Start today and revolutionize your content strategy with the power of AI!</p>
+
             </div>
 
               <div className="relative flex items-center justify-center py-10 md:py-20 w-full">
