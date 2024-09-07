@@ -56,7 +56,7 @@ Start today and revolutionize your content strategy with the power of AI!</p>
 <div className='flex md:flex relative items-center justify-center mt-8 md:mt-12 w-full'>
   <Link href="/dashboard" className='flex items-center justify-center w-max rounded-full border-t border-foreground/30 bg-white/20 backdrop-blur-lg px-2 py-1 md:py-2 md:gap-3 shadow-2xl shadow-foreground/40 cursor-pointer select-none'>
     <p className='text-foreground text-sm text-center md:text-base font-medium pl-4 pr-4 lg:marker:pr-0'>
-      {"✨ "} Start building your content now
+      {"✨ "} Start building now
     </p>
     <Button size="sm" className='rounded-full lg:flex border border-foreground/20 bg-gradient-to-r from-blue-900 via-purple-600 to-pink-700 '>
       Get Started
