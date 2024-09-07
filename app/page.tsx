@@ -63,7 +63,6 @@ const Home = () => {
             </div>
 
                   
-            <p className='text-base md:text-lg text-foreground/80 mt-6 text-center'>Transform your content creation with CreatifyAI! Simplify email, blog, and social media post generation, while boosting productivity with AI-driven features like code generation, grammar checking, and text enhancements. Start today and revolutionize your content strategy!</p>
 
             </div>
 
