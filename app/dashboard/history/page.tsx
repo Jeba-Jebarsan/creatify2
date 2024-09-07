@@ -1,4 +1,3 @@
-
 import Templates from '@/app/(data)/Templates';
 import { db } from '@/utils/db';
 import { AIOutput } from '@/utils/schema';
@@ -29,7 +28,7 @@ async function History() {
   if (!user || !user.primaryEmailAddress) {
     return (
       <div className="m-5 p-5 border rounded-lg bg-white">
-        <h2 className="font-bold text-3xl">History</h2>
+        <h2 className="font-bold text-2xl md:text-3xl">History</h2>
         <p className="text-gray-500">No user logged in or email address is missing.</p>
       </div>
     );
@@ -55,26 +54,26 @@ async function History() {
 
   return (
     <div className="m-5 p-5 border rounded-lg bg-white">
-      <h2 className="font-bold text-3xl">History</h2>
-      <p className="text-gray-500">Search your previously generated content below:</p>
+      <h2 className="font-bold text-2xl md:text-3xl">History</h2>
+      <p className="text-gray-500 text-sm md:text-base">Search your previously generated content below:</p>
 
       {HistoryList.length === 0 ? (
         <p className="text-gray-500 mt-5">No history found. Create some content to see it listed here.</p>
       ) : (
         <>
-          <div className='grid grid-cols-7 font-bold bg-secondary mt-5 py-3 px-3 bg-slate-200'>
-            <h2 className='col-span-2'>TEMPLATE</h2>
-            <h2 className='col-span-2'>AI RESP</h2>
-            <h2>DATE</h2>
-            <h2>LETTERS</h2>
-            <h2>COPY</h2>
+          <div className='hidden md:grid grid-cols-5 font-bold bg-secondary mt-5 py-3 px-3 bg-slate-200'>
+            <h2 className='col-span-1'>TEMPLATE</h2>
+            <h2 className='col-span-1'>AI RESP</h2>
+            <h2 className='col-span-1'>DATE</h2>
+            <h2 className='col-span-1'>LETTERS</h2>
+            <h2 className='col-span-1'>COPY</h2>
           </div>
           {HistoryList.map((item: HISTORY, index: number) => (
             <div
               key={index}
-              className="grid grid-cols-7 gap-4 my-5 py-3 px-3 border-b border-gray-300"
+              className="flex flex-col md:grid md:grid-cols-5 gap-4 my-5 py-3 px-3 border-b border-gray-300"
             >
-              <div className="col-span-2 flex items-center">
+              <div className="flex items-center md:col-span-1">
                 {GetTemplateName(item.templateSlug)?.icon && (
                   <Image
                     src={GetTemplateName(item.templateSlug)?.icon || '/path/to/fallback/image.png'}
@@ -85,17 +84,14 @@ async function History() {
                 )}
                 <span className="ml-2">{GetTemplateName(item.templateSlug)?.name || 'Unknown Template'}</span>
               </div>
-              <div
-                className="col-span-2 p-2 border border-gray-300 rounded-lg bg-gray-100 overflow-y-auto h-24"
-                style={{ marginLeft: '-1rem' }}
-              >
+              <div className="md:col-span-1 p-2 border border-gray-300 rounded-lg bg-gray-100 overflow-y-auto h-24">
                 <p>{item.aiResponse || 'No response'}</p>
               </div>
-              <div className="col-span-1">{item.createdAt}</div>
-              <div className="col-span-1">
+              <div className="md:col-span-1">{item.createdAt}</div>
+              <div className="md:col-span-1">
                 {item.aiResponse ? countLetters(item.aiResponse) : '0'}
               </div>
-              <div className="col-span-1">
+              <div className="md:col-span-1">
                 <CopyButton textToCopy={item.aiResponse || ''} />
               </div>
             </div>
