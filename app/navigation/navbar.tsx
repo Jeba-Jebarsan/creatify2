@@ -4,6 +4,8 @@ import Icons from '../global/icons';
 import { buttonVariants } from '@/components/ui/button';
 import { currentUser } from '@clerk/nextjs/server';
 import {UserButton} from "@clerk/nextjs"
+import classNames from "classnames" 
+
 
 const Navbar = async() => {
     const user = await currentUser();
@@ -38,9 +40,16 @@ const Navbar = async() => {
                         <UserButton/>
                     ) : (
                         <>
-                            <Link href="/sign-in" className={`${buttonVariants({ size: "sm", variant: "ghost" })} text-white`}>
-                                Login
-                            </Link>
+                           <Link 
+  href="/sign-in"
+  className={classNames(
+    buttonVariants({ size: "sm", variant: "ghost" }),
+    "relative inline-block text-gray-700 transition-shadow duration-300 hover:text-blue-500 hover:shadow-lg hover:shadow-blue-500/50"
+  )}
+>
+  Login
+</Link>
+
                             <Link
                                 href="/sign-up"
                                 className={`${buttonVariants({ size: "sm", className: "hidden md:flex" })} relative rounded-full bg-gradient-to-r from-blue-900 via-purple-600 to-pink-700 text-white transition-colors duration-200 group-hover:from-blue-700 group-hover:via-purple-500 group-hover:to-pink-500`}
