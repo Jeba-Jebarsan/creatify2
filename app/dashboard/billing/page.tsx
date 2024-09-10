@@ -259,12 +259,17 @@ const Billing: React.FC = () => {
               <span className="text-gray-700">1 Year of History</span>
             </li>
           </ul>
-          <button
-            onClick={handlePayment}
-            className="mt-8 block rounded-full border border-indigo-600 px-12 py-3 text-center text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-700 hover:ring-1 hover:ring-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700"
-          >
-            {isOfferActive ? 'Upgrade' : 'Subscribe'}
-          </button>
+          <div className="flex justify-center">
+  <button
+    onClick={handlePayment}
+    className="mt-8 block rounded-full border border-transparent bg-gradient-to-r from-purple-600 to-blue-600 px-12 py-3 text-center text-sm font-medium text-white hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-700"
+  >
+    {isOfferActive ? 'Upgrade' : 'Subscribe'}
+  </button>
+</div>
+
+
+
         </div>
       </div>
       {message && (
