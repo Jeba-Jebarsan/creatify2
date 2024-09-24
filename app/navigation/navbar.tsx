@@ -44,7 +44,7 @@ const Navbar = async() => {
   href="/sign-in"
   className={classNames(
     buttonVariants({ size: "sm", variant: "ghost" }),
-    "relative inline-block text-gray-700 transition-shadow duration-300 hover:text-blue-500 hover:shadow-lg hover:shadow-blue-500/50"
+    "relative inline-block text-white transition-shadow duration-300 hover:text-blue-500 hover:shadow-lg hover:shadow-blue-500/50"
   )}
 >
   Login
