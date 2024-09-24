@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { PaymentDetails } from './payhere'; // Adjust the import path if needed
+import { PaymentDetails } from './payhere';
 
 const Billing: React.FC = () => {
   const [paymentDetails, setPaymentDetails] = useState<PaymentDetails | null>(null);
@@ -53,7 +53,7 @@ const Billing: React.FC = () => {
 
   useEffect(() => {
     const calculateCountdown = () => {
-      const targetDate = new Date('2024-08-10T20:44:00+05:30'); // August 11, 2024, 09:20 AM Sri Lankan time
+      const targetDate = new Date('2024-09-14T18:15:00+05:30'); // August 11, 2024, 09:20 AM Sri Lankan time
       const now = new Date();
       const timeDiff = targetDate.getTime() - now.getTime();
 
@@ -79,7 +79,7 @@ const Billing: React.FC = () => {
 
   const handlePayment = () => {
     const now = new Date();
-    const targetDate = new Date('2024-08-10T20:44:00+05:30'); // August 11, 2024, 09:20 AM Sri Lankan time
+    const targetDate = new Date('2024-09-14T18:15:00+05:30'); // August 11, 2024, 09:20 AM Sri Lankan time
 
     if (now < targetDate) {
       setMessage('Free for one month. Enjoy! 🎉');

@@ -58,10 +58,12 @@ Start today and revolutionize your content strategy with the power of AI!</p>
     <p className='text-foreground text-sm text-center md:text-base font-medium pl-4 pr-4 lg:marker:pr-0'>
       {"✨ "} Start building now
     </p>
-    <Button size="sm" className='rounded-full lg:flex border border-foreground/20 bg-gradient-to-r from-blue-900 via-purple-600 to-pink-700 '>
-      Get Started
-      <ArrowRight className='w-4 h-4 ml-1' />
-    </Button>
+    <Button size="sm" className='rounded-full lg:flex border border-foreground/20 bg-gradient-to-r from-purple-500 to-blue-800'>
+  Get Started
+  <ArrowRight className='w-4 h-4 ml-1' />
+</Button>
+
+
   </Link>
 </div>
 
@@ -209,7 +211,7 @@ Start today and revolutionize your content strategy with the power of AI!</p>
             </CardContent>
             <CardFooter className="mt-auto">
               <Link
-                href=""
+                href="/dashboard/billing"
                 className={cn(
                   "w-full text-center text-primary-foreground bg-primary p-2 rounded-md text-sm font-medium",
                   card.title !== "Unlimited Saas" && "!bg-foreground !text-background"
@@ -327,12 +329,13 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                             </div>
                             <div className="flex flex-col items-start gap-2 md:min-w-80 mt-5 md:mt-0 w-full md:w-max">
                                 <form action="#" className="flex flex-col md:flex-row items-center gap-2 w-full md:max-w-xs">
-                                    <Input
-                                        required
-                                        type="email"
-                                        placeholder="Enter your email"
-                                        className="focus-visible:ring-0 focus-visible:ring-transparent focus-visible:border-primary duration-300 w-full"
-                                    />
+                                <Input
+    required
+    type="email"
+    placeholder="Enter your email"
+    className="bg-gray-100 border border-gray-300 focus-visible:ring-0 focus-visible:ring-transparent focus-visible:border-primary duration-300 w-full p-2 rounded-md text-gray-700"
+/>
+
                                     <Button type="submit" size="sm" variant="secondary" className="w-full md:w-max text-blue-800">
                                         Subscribe
                                     </Button>

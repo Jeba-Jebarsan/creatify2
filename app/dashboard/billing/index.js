@@ -3,10 +3,8 @@ const crypto = require('crypto');
 const app = express();
 app.use(express.json());
 
-const MERCHANT_SECRET = 'MTA2ODM5OTI4MTc1NDY0MTY2ODM2NzAxODE2NTAyMDY3NTA0MTg5M'; // Remove extra space at the en
+const MERCHANT_SECRET = 'Mzk2NjQxOTMwNjc3Mjk2Mzk0MjU1MDUwODYxNjMwNjc0MDgyMzY=';
 
-
-d
 
 app.post('/api/payment-details', (req, res) => {
     const paymentDetails = req.body;

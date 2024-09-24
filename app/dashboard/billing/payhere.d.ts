@@ -1,3 +1,4 @@
+// payhere.d.ts
 declare global {
     interface Window {
       payhere?: {
