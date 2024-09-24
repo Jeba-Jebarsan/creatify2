@@ -11,7 +11,7 @@ const TestimonialsPage = () => {
 
           <div className='flex flex-col items-center'>
             <img 
-              src='/jeba.jpg'  // Path relative to the public directory
+              src='/jeb.jpg'  // Path relative to the public directory
               alt='Thomas Jebarsan' 
               className='rounded-full w-64 h-36 mb-6'
             />
