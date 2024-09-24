@@ -12,7 +12,7 @@ const TestimonialsPage = () => {
           <div className='flex flex-col items-center'>
             <img 
               src='/jeb.jpg'  // Path relative to the public directory
-              alt='Thomas Jebarsan' 
+              //alt='Thomas Jebarsan' 
               className='rounded-full w-64 h-36 mb-6'
             />
             <blockquote className='bg-white text-black p-6 rounded-lg shadow-lg max-w-2xl mx-auto'>
