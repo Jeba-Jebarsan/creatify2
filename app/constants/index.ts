@@ -3,7 +3,7 @@ export const perks = [
     {
         icon: Icons.auth,
         title: "Sign Up",
-        info: "Create your free account to get started with Astra.",
+        info: "Create your free account to get started with Creatify.",
     },
     {
         icon: Icons.customize,
