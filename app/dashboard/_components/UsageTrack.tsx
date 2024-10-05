@@ -23,7 +23,7 @@ function UsageTrack() {
   const [countdown, setCountdown] = useState<string>(''); 
   const [isOfferActive, setIsOfferActive] = useState<boolean>(true); 
   const [hasCountdownExpired, setHasCountdownExpired] = useState<boolean>(false);
-  const [maxWords, setMaxWords] = useState(10000);
+  const [maxWords, setMaxWords] = useState<number>(10000); // Default max words for non-subscribers
 
   useEffect(() => {
     calculateCountdown();
@@ -45,7 +45,6 @@ function UsageTrack() {
 
   const fetchData = async () => {
     setLoading(true);
-
     const userEmail = user?.primaryEmailAddress?.emailAddress;
 
     if (!userEmail) {
@@ -59,17 +58,18 @@ function UsageTrack() {
         .from(AIOutput)
         .where(eq(AIOutput.createdBy, userEmail));
       
-      // Check user subscription status
       const userSubscriptionResult = await db.select()
         .from(UserSubscriptionSchema)
         .where(eq(UserSubscriptionSchema.email, userEmail));
 
+      console.log("User Subscription Result:", userSubscriptionResult);
+
       if (userSubscriptionResult.length > 0) {
         setUserSubscription(true);
-        setMaxWords(1000000);
+        setMaxWords(100000); // Set to 100,000 words for active subscription
       } else {
         setUserSubscription(false);
-        setMaxWords(10000);
+        setMaxWords(10000); // Default max words for non-subscribers
       }
       
       const historyResults: HISTORY[] = rawResult.map((item) => ({
@@ -127,10 +127,11 @@ function UsageTrack() {
     window.location.href = `mailto:${feedbackEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
-  const totalCredits = maxWords;
-  const usageInfo = totalUsage >= totalCredits 
+  const totalCredits = maxWords; // Use maxWords to calculate total credits
+  const usageExceeded = totalUsage >= totalCredits;
+  const usageInfo = usageExceeded 
     ? "Your limit is over"
-    : `${totalUsage}/${userSubscription ? '1,00,000' : '10,000'} Credits Used (${(totalUsage / totalCredits * 100).toFixed(2)}%)`;
+    : `${totalUsage}/${totalCredits} Credits Used (${(totalUsage / totalCredits * 100).toFixed(2)}%)`; // Display usage correctly
 
   return (
     <div className='m-5'>
@@ -154,23 +155,15 @@ function UsageTrack() {
           </div>
         )}
       </div>
-      {!isOfferActive ? (
+      {!isOfferActive && (
         <Button 
           variant={'secondary'} 
-          className='w-full my-3 text-primary bg-slate-400'
-          onClick={() => {
-            if (hasCountdownExpired) {
-              window.location.href = '/dashboard/billing';
-            }
-          }}
-          disabled={!hasCountdownExpired}
+          className='mt-3'
+          onClick={handleFeedback}
         >
-          {hasCountdownExpired ? 'Upgrade' : 'Available After Countdown'}
+          Give Feedback
         </Button>
-      ) : null}
-      <Button onClick={handleFeedback} variant={'secondary'} className='w-full my-3 text-primary bg-slate-400'>
-        Feedback
-      </Button>
+      )}
     </div>
   );
 }
