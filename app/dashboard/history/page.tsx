@@ -17,9 +17,9 @@ export interface HISTORY {
   createdAt: string | null;
 }
 
-// Utility function to count letters only
-const countLetters = (text: string): number => {
-  return (text.match(/[a-zA-Z]/g) || []).length;
+// Utility function to count words
+const countWords = (text: string): number => {
+  return text.trim().split(/\s+/).length;
 };
 
 async function History() {
@@ -27,8 +27,8 @@ async function History() {
 
   if (!user || !user.primaryEmailAddress) {
     return (
-      <div className="m-5 p-5 border rounded-lg bg-white">
-        <h2 className="font-bold text-2xl md:text-3xl">History</h2>
+      <div className="m-5 p-5 border rounded-lg bg-white shadow-lg">
+        <h2 className="font-bold text-2xl md:text-3xl text-primary">History</h2>
         <p className="text-gray-500">No user logged in or email address is missing.</p>
       </div>
     );
@@ -53,25 +53,25 @@ async function History() {
   };
 
   return (
-    <div className="m-5 p-5 border rounded-lg bg-white">
-      <h2 className="font-bold text-2xl md:text-3xl">History</h2>
-      <p className="text-gray-500 text-sm md:text-base">Search your previously generated content below:</p>
+    <div className="m-5 p-5 border rounded-lg bg-white shadow-lg">
+      <h2 className="font-bold text-2xl md:text-3xl text-primary mb-2">Your Content History</h2>
+      <p className="text-gray-600 text-sm md:text-base mb-4">Explore your previously generated content below:</p>
 
       {HistoryList.length === 0 ? (
-        <p className="text-gray-500 mt-5">No history found. Create some content to see it listed here.</p>
+        <p className="text-gray-500 mt-5 p-4 bg-gray-100 rounded-lg">No history found. Create some amazing content to see it listed here!</p>
       ) : (
         <>
-          <div className='hidden md:grid grid-cols-5 font-bold bg-secondary mt-5 py-3 px-3 bg-slate-200'>
+          <div className='hidden md:grid grid-cols-5 font-bold bg-gradient-to-r from-blue-500 to-purple-600 text-white mt-5 py-3 px-3 rounded-t-lg'>
             <h2 className='col-span-1'>TEMPLATE</h2>
-            <h2 className='col-span-1'>AI RESP</h2>
+            <h2 className='col-span-1'>AI RESPONSE</h2>
+            <h2 className='col-span-1'>WORD COUNT</h2>
             <h2 className='col-span-1'>DATE</h2>
-            <h2 className='col-span-1'>LETTERS</h2>
-            <h2 className='col-span-1'>COPY</h2>
+            <h2 className='col-span-1'>ACTIONS</h2>
           </div>
           {HistoryList.map((item: HISTORY, index: number) => (
             <div
               key={index}
-              className="flex flex-col md:grid md:grid-cols-5 gap-4 my-5 py-3 px-3 border-b border-gray-300"
+              className="flex flex-col md:grid md:grid-cols-5 gap-4 my-5 py-3 px-3 border-b border-gray-300 hover:bg-gray-50 transition duration-300"
             >
               <div className="flex items-center md:col-span-1">
                 {GetTemplateName(item.templateSlug)?.icon && (
@@ -80,17 +80,18 @@ async function History() {
                     width={50}
                     height={50}
                     alt="Template Icon"
+                    className="rounded-full"
                   />
                 )}
-                <span className="ml-2">{GetTemplateName(item.templateSlug)?.name || 'Unknown Template'}</span>
+                <span className="ml-2 font-medium">{GetTemplateName(item.templateSlug)?.name || 'Unknown Template'}</span>
               </div>
-              <div className="md:col-span-1 p-2 border border-gray-300 rounded-lg bg-gray-100 overflow-y-auto h-24">
-                <p>{item.aiResponse || 'No response'}</p>
+              <div className="md:col-span-1 p-2 border border-gray-300 rounded-lg bg-gray-100 overflow-y-auto h-24 hover:shadow-md transition duration-300">
+                <p className="text-sm">{item.aiResponse || 'No response'}</p>
               </div>
-              <div className="md:col-span-1">{item.createdAt}</div>
-              <div className="md:col-span-1">
-                {item.aiResponse ? countLetters(item.aiResponse) : '0'}
+              <div className="md:col-span-1 text-gray-600">
+                {item.aiResponse ? countWords(item.aiResponse) : 0} words
               </div>
+              <div className="md:col-span-1 text-gray-600">{new Date(item.createdAt || '').toLocaleDateString()}</div>
               <div className="md:col-span-1">
                 <CopyButton textToCopy={item.aiResponse || ''} />
               </div>
@@ -99,7 +100,7 @@ async function History() {
         </>
       )}
 
-      <hr />
+      <hr className="my-6 border-t border-gray-300" />
     </div>
   );
 }

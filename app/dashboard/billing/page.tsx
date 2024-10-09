@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { db } from '@/utils/db';
 import { UserSubscription } from '@/utils/schema';
 import { useUser } from '@clerk/nextjs';
+import { motion } from 'framer-motion';
+import confetti from 'canvas-confetti';
 
 const Billing: React.FC = () => {
   const { user } = useUser();
@@ -64,8 +66,12 @@ const Billing: React.FC = () => {
     try {
       await saveSubscriptionToDatabase(details);
       setMessage('Payment successful! Activating your subscription...');
-      // Refresh page after successful subscription
-      setTimeout(() => window.location.reload(), 2000);
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+      setTimeout(() => window.location.reload(), 3000);
     } catch (error) {
       console.error('Payment processing error:', error);
       setMessage('There was a problem activating your subscription. Please contact support.');
@@ -75,12 +81,20 @@ const Billing: React.FC = () => {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-      <h1 className="text-center font-bold text-4xl mb-8">Upgrade Your Plan</h1>
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8"
+    >
+      <h1 className="text-center font-bold text-4xl mb-8 text-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">Upgrade Your Plan</h1>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:items-start">
         {/* Free Plan */}
-        <div className="rounded-3xl border-2 border-gray-300 overflow-hidden bg-white shadow-md">
+        <motion.div 
+          whileHover={{ scale: 1.05 }}
+          className="rounded-3xl border-2 border-gray-300 overflow-hidden bg-white shadow-lg"
+        >
           <div className="p-8">
             <div className="text-center">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Free</h2>
@@ -112,22 +126,25 @@ const Billing: React.FC = () => {
             </ul>
 
             <Button 
-              className="w-full mt-8 bg-gray-600 hover:bg-gray-700"
+              className="w-full mt-8 bg-gray-600 hover:bg-gray-700 transition-all duration-300"
               variant="secondary"
             >
               Currently Active Plan
             </Button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Monthly Plan */}
-        <div className="rounded-3xl border-2 border-gray-300 overflow-hidden bg-white shadow-md">
+        <motion.div 
+          whileHover={{ scale: 1.05 }}
+          className="rounded-3xl border-2 border-blue-500 overflow-hidden bg-white shadow-lg"
+        >
           <div className="p-8">
             <div className="text-center">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Monthly</h2>
+              <h2 className="text-2xl font-semibold text-blue-600 mb-4">Monthly</h2>
               <h4 className='text-gray-600'>Get the best of Creatify</h4>
               <div className="flex items-baseline justify-center">
-                <span className="text-5xl font-bold">$9.99</span>
+                <span className="text-5xl font-bold text-blue-600">$9.99</span>
                 <span className="text-gray-500 ml-1">/month</span>
               </div>
             </div>
@@ -154,7 +171,7 @@ const Billing: React.FC = () => {
             <div className="mt-8">
               {!showPayment ? (
                 <Button 
-                  className="w-full bg-blue-600 hover:bg-blue-700"
+                  className="w-full bg-blue-600 hover:bg-blue-700 transition-all duration-300"
                   onClick={() => setShowPayment(true)}
                 >
                  {UserSubscription ? 'Active Plan' : 'Get Started'}
@@ -188,17 +205,22 @@ const Billing: React.FC = () => {
             <div className="mt-4 text-red-500 text-center">{message}</div>
             {isProcessing && <p className="text-center">Processing your payment...</p>}
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {isOfferActive && (
-        <div className="mt-8 text-center">
-          <p className="text-lg font-semibold">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="mt-8 text-center"
+        >
+          <p className="text-lg font-semibold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
             Special Offer! Get it before {countdown}
           </p>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

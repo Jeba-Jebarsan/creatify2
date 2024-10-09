@@ -14,7 +14,8 @@ export default [
                 name: 'context',
                 required: true
             }
-        ]
+        ],
+       
     },
     {
         name: 'Rewrite Your Email',
@@ -323,7 +324,7 @@ export default [
     {
         name: 'Product Description',
         desc: 'Develop precise product descriptions',
-        category: 'E-commerce',
+        category: 'E-Tail',
         icon: 'https://cdn-icons-png.flaticon.com/128/1670/1670993.png',
         aiPromt: 'Create a detailed product description based on the given product information.',
         slug: 'product-description',
