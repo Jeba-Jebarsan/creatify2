@@ -85,7 +85,7 @@ function TemplateCard({ icon, name, desc, category, slug }: TEMPLATE) {
 
   return (
     <motion.div
-      className={`relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 ${isMobile ? '' : 'cursor-pointer'}`}
+      className={`relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 ${isMobile ? 'w-full' : 'cursor-pointer'}`}
       whileHover={isMobile ? {} : {
         scale: 1.05,
         boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.1)',
