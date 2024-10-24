@@ -47,11 +47,7 @@ export default [
                 name: 'niche',
                 required: true
             },
-            {
-                lable: 'Enter blog outline',
-                field: 'textarea',
-                name: 'outline'
-            }
+           
         ]
     },
     {
