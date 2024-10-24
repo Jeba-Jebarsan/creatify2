@@ -75,7 +75,7 @@ function SideNav({ isVisible, toggleSideNav }: SideNavProps) {
         <div className="flex flex-col items-center">
           <div onClick={refreshPage} className="cursor-pointer transform hover:scale-105 transition-transform duration-300">
             {/* Updated logo image path */}
-            <Image src="/logo.png" alt="logo" width={160} height={160} className="drop-shadow-md" />
+            <Image src="/logo.svg" alt="logo" width={160} height={160} className="drop-shadow-md" />
           </div>
           <div onClick={refreshPage} className="cursor-pointer">
             
