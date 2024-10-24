@@ -61,7 +61,7 @@ const Navbar = () => {
 
     const NavItems = () => (
         <ul className={`${isMobile ? 'flex-col p-4 space-y-4' : 'flex'} items-center justify-center gap-8`}>
-            <li className='text-white hover:text-gray-300 d/80 text-base font-medium'>
+            <li className='text-white hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-purple-600 hover:to-red-600 d/80 text-base font-medium'>
                 <Link href="#pricing-section" onClick={() => setIsMenuOpen(false)}>Pricing</Link>
             </li>
             <li className='text-white hover:text-gray-300 d/80 text-base font-medium relative'>
@@ -70,6 +70,7 @@ const Navbar = () => {
                     onMouseEnter={!isMobile ? () => setFeaturesOpen(true) : undefined}
                     onMouseLeave={!isMobile ? () => setFeaturesOpen(false) : undefined}
                     className="flex items-center"
+                    style={{ color: featuresOpen ? 'transparent' : 'white', background: featuresOpen ? 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)' : 'transparent', WebkitBackgroundClip: featuresOpen ? 'text' : 'none', WebkitTextFillColor: featuresOpen ? 'transparent' : 'white' }}
                 >
                     Features <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
@@ -103,11 +104,47 @@ const Navbar = () => {
                     </div>
                 )}
             </li>
-            <li className='text-white hover:text-gray-300 d/80 text-base font-medium'>
-                <Link href="/AboutUs" onClick={() => setIsMenuOpen(false)}>About Us</Link>
+            <li className='text-white d/80 text-base font-medium'>
+                <Link 
+                    href="/AboutUs" 
+                    onClick={() => setIsMenuOpen(false)}
+                    style={{ color: 'white', background: 'transparent', WebkitBackgroundClip: 'none', WebkitTextFillColor: 'white' }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.color = 'transparent';
+                        e.currentTarget.style.background = 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)';
+                        e.currentTarget.style.webkitBackgroundClip = 'text';
+                        e.currentTarget.style.webkitTextFillColor = 'transparent';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.color = 'white';
+                        e.currentTarget.style.background = 'transparent';
+                        e.currentTarget.style.webkitBackgroundClip = 'none';
+                        e.currentTarget.style.webkitTextFillColor = 'white';
+                    }}
+                >
+                    About Us
+                </Link>
             </li>
-            <li className='text-white hover:text-gray-300 d/80 text-base font-medium'>
-                <Link href="/BlogPage" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+            <li className='text-white d/80 text-base font-medium'>
+                <Link 
+                    href="/BlogPage" 
+                    onClick={() => setIsMenuOpen(false)}
+                    style={{ color: 'white', background: 'transparent', WebkitBackgroundClip: 'none', WebkitTextFillColor: 'white' }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.color = 'transparent';
+                        e.currentTarget.style.background = 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)';
+                        e.currentTarget.style.webkitBackgroundClip = 'text';
+                        e.currentTarget.style.webkitTextFillColor = 'transparent';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.color = 'white';
+                        e.currentTarget.style.background = 'transparent';
+                        e.currentTarget.style.webkitBackgroundClip = 'none';
+                        e.currentTarget.style.webkitTextFillColor = 'white';
+                    }}
+                >
+                    Blog
+                </Link>
             </li>
         </ul>
     );
@@ -117,8 +154,8 @@ const Navbar = () => {
             <div className='flex items-center justify-between h-full mx-auto md:max-w-screen-xl'>
                 <div className='flex items-start'>
                     <Link href="/" className='flex items-center gap-2'>
-                        <Icons.logo />
-                        <span className='text-white text-lg font-medium'>Creatify</span>
+                        <Image src="/logo.svg" alt="logo" width={70} height={70} />
+                        <span className='text-xl font-bold' style={{ background: 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Creatify</span>
                     </Link>
                 </div>
                 {isMobile ? (

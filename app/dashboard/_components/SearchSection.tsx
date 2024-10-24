@@ -19,7 +19,7 @@ function SearchSection({ onSearchInput }: { onSearchInput: (value: string) => vo
   }, []);
 
   return (
-    <div className='p-10 bg-gradient-to-br from-blue-700 via-purple-600 to-pink-500 flex flex-col justify-center items-center text-white'>
+    <div className='p-10 bg-blue-800 flex flex-col justify-center items-center text-white'>
       <h2 className='text-3xl font-bold'>Find All Templates</h2>
       <p>What Are You Planning to Create?</p>
       <div className='w-full flex justify-center items-center'>

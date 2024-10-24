@@ -87,7 +87,7 @@ const Billing: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8"
     >
-      <h1 className="text-center font-bold text-4xl mb-8 text-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">Upgrade Your Plan</h1>
+      <h1 className="text-center font-bold text-4xl mb-8" style={{ background: 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Upgrade Your Plan</h1>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:items-start">
         {/* Free Plan */}

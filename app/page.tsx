@@ -15,6 +15,7 @@ import { cn } from '@/lib/utils';
 import Marquee from './marquee';
 import { LampContainer } from './lamp';
 import { Input } from '@/components/ui/input';
+import { TextHoverEffect } from '@/components/ui/text-hover-effect'; // Adjust the path as necessary
 
 const backur = "/sty.png"; // Ensure this path is correct and starts with a leading slash
 
@@ -46,7 +47,7 @@ const Home = () => {
                 </button>
                 <div className='flex flex-col items-center mt-8 max-w-3xl max-auto w-11/12 md:w-full'>
                   <h1 className='text-4xl md:text-6xl md:!leading-snug font-semibold text-center bg-clip-text bg-gradient-to-b from-gray-50 to-gray-100 text-transparent'>
-                    The Ultimate AI Content Creation Tool
+                    The Ultimate <span style={{ background: 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>AI Content</span> Creation Tool
                   </h1>
                   
             <p className='text-base md:text-lg text-foreground/80 mt-6 text-center'>Transform your content creation with CreatifyAI! Our AI-powered tool simplifies generating and optimizing emails, blogs, and social media posts. Enhance your productivity with features like code generation, grammar checking, and tailored text improvements.
@@ -58,14 +59,18 @@ Start today and revolutionize your content strategy with the power of AI!</p>
     <p className='text-foreground text-sm text-center md:text-base font-medium pl-4 pr-4 lg:marker:pr-0'>
       {"✨ "} Start building now
     </p>
-    <Button size="sm" className='rounded-full lg:flex border border-foreground/20 bg-gradient-to-r from-purple-500 to-blue-800'>
+    <Button size="sm" className='rounded-full lg:flex border border-foreground/20 bg-gradient-to-r from-[#1e3a8a] via-[#9333ea] to-[#dc2626]'>
   Get Started
   <ArrowRight className='w-4 h-4 ml-1' />
 </Button>
 
 
+
   </Link>
+ 
+
 </div>
+<div className='text-lg text-gray-400 mt-4 font-bold' style={{ background: 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>No credit card required</div>
 
             </div>
 
@@ -74,7 +79,7 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                   <div className="absolute top-1/2 left-1/2 -z-10 gradient w-3/4 -translate-x-1/2 h-3/4 -translate-y-1/2 inset-0 blur-[10rem]"></div>
                     <div className="-m-2 rounded-xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl">
                                 <Image
-                                    src={backur}
+                                    src="/sty.png"
                                     alt="background"
                                     width={1200}
                                     height={1200}
@@ -357,10 +362,10 @@ Start today and revolutionize your content strategy with the power of AI!</p>
 
     <div className="grid gap-8 xl:grid-cols-3 xl:gap-8 w-full">
         <div className="flex flex-col items-start justify-start md:max-w-[200px]">
-            <div className="flex items-start">
-                <Icons.logo className="w-7 h-7" />
-            </div>
-            <p className="text-muted-foreground mt-4 text-sm text-start">
+        <Link href="/" className='flex items-center gap-2'>
+          <Image src="/logo.svg" alt="logo" width={100} height={90} />
+        </Link> 
+        <p className="text-muted-foreground mt-4 text-sm text-start">
             Craft stunning content effortlessly with CreatifyAI
             </p>
             <span className="mt-4 text-neutral-200 text-sm flex items-center">
@@ -479,6 +484,9 @@ Start today and revolutionize your content strategy with the power of AI!</p>
         <p className="text-sm text-muted-foreground mt-8 md:mt-0">
             &copy; {new Date().getFullYear()} Creatify AI INC. All rights reserved.
         </p>
+    </div>
+    <div className="h-[18rem] lg:h-[18rem] hidden md:flex items-center justify-center">
+        <TextHoverEffect text="CREATIFY" />
     </div>
 </footer>
 
