@@ -14,6 +14,18 @@ export const TextHoverEffect = ({
     const [cursor, setCursor] = useState({ x: 0, y: 0 });
     const [hovered, setHovered] = useState(false);
     const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" });
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
         if (svgRef.current && cursor.x !== null && cursor.y !== null) {
@@ -34,9 +46,17 @@ export const TextHoverEffect = ({
             height="100%"
             viewBox="0 0 300 100"
             xmlns="http://www.w3.org/2000/svg"
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
+            onMouseEnter={() => !isMobile && setHovered(true)}
+            onMouseLeave={() => !isMobile && setHovered(false)}
+            onMouseMove={(e) => !isMobile && setCursor({ x: e.clientX, y: e.clientY })}
+            onTouchStart={() => isMobile && setHovered(true)}
+            onTouchEnd={() => isMobile && setHovered(false)}
+            onTouchMove={(e) => {
+                if (isMobile) {
+                    const touch = e.touches[0];
+                    setCursor({ x: touch.clientX, y: touch.clientY });
+                }
+            }}
             className="select-none"
         >
             <defs>
@@ -79,7 +99,7 @@ export const TextHoverEffect = ({
                 textAnchor="middle"
                 dominantBaseline="middle"
                 strokeWidth="0.3"
-                className="font-[helvetica] font-bold stroke-neutral-800 fill-transparent text-6xl"
+                className="font-[helvetica] font-bold stroke-neutral-800 fill-transparent text-6xl md:text-6xl"
                 style={{ opacity: hovered ? 0.7 : 0 }}
             >
                 {text}
@@ -90,7 +110,7 @@ export const TextHoverEffect = ({
                 textAnchor="middle"
                 dominantBaseline="middle"
                 strokeWidth="0.3"
-                className="font-[helvetica] font-bold fill-transparent text-6xl stroke-neutral-800"
+                className="font-[helvetica] font-bold fill-transparent text-6xl md:text-6xl stroke-neutral-800"
                 initial={{ strokeDashoffset: 2000, strokeDasharray: 2000 }}
                 animate={{
                     strokeDashoffset: 0,
@@ -111,7 +131,7 @@ export const TextHoverEffect = ({
                 stroke="url(#textGradient)"
                 strokeWidth="0.3"
                 mask="url(#textMask)"
-                className="font-[helvetica] font-bold fill-transparent text-6xl"
+                className="font-[helvetica] font-bold fill-transparent text-6xl md:text-6xl"
             >
                 {text}
             </text>
