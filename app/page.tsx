@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Navbar from "./navigation/navbar";
 import WrapperA from './(marketing)/warpper';
@@ -22,6 +24,15 @@ const backur = "/sty.png"; // Ensure this path is correct and starts with a lead
 const Home = () => {
   const firstRow = reviews.slice(0, reviews.length / 2);
   const secondRow = reviews.slice(reviews.length / 2);
+
+  const toggleFAQ = (index: number) => {
+    const content = document.getElementById(`faq-content-${index}`);
+    const icon = document.getElementById(`faq-icon-${index}`);
+    if (content && icon) {
+      content.classList.toggle('hidden');
+      icon.textContent = content.classList.contains('hidden') ? '+' : '-';
+    }
+  };
 
   return (
     <div className='bg-gradient-to-b from-black via-blue-950 to-black'>
@@ -70,7 +81,36 @@ Start today and revolutionize your content strategy with the power of AI!</p>
  
 
 </div>
+<div className="flex items-center justify-center mt-6 animate-fade-in">
+  <div className="flex -space-x-3 hover:space-x-1 transition-all duration-300">
+    <img 
+      src="/avatar1.png" 
+      alt="User avatar" 
+      className="w-12 h-12 rounded-full border-2 border-blue-500/50 hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-blue-500/30"
+    />
+    <img 
+      src="/avatar2.png" 
+      alt="User avatar"  
+      className="w-12 h-12 rounded-full border-2 border-purple-500/50 hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-purple-500/30"
+    />
+    <img 
+      src="/avatar3.png" 
+      alt="User avatar"  
+      className="w-12 h-12 rounded-full border-2 border-pink-500/50 hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-pink-500/30"
+    />
+    <img 
+      src="/avatar4.png" 
+      alt="User avatar"  
+      className="w-12 h-12 rounded-full border-2 border-red-500/50 hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-red-500/30"
+    />
+  </div>
+  <span className="ml-4 text-base font-medium text-white">
+    Join +1 million Users
+  </span>
+</div>
+
 <div className='text-lg text-gray-400 mt-4 font-bold' style={{ background: 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>No credit card required</div>
+
 
             </div>
 
@@ -300,6 +340,90 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                     </div>
                 </ContainerB>
             </WrapperA>
+             {/* FAQ Section */}
+             <WrapperA className="flex flex-col items-center justify-center py-12 relative">
+                <ContainerB>
+                    <div className="max-w-4xl mx-auto">
+                        <div className="text-center mb-12">
+                            <SectionBadge title="FAQ" />
+                            <h2 className="text-3xl lg:text-4xl font-semibold mt-6 text-white">
+                                Frequently Asked Questions
+                            </h2>
+                            <p className="text-muted-foreground mt-4">
+                                Everything you need to know about Creatify AI
+                            </p>
+                        </div>
+
+                        <div className="grid gap-6">
+                            {[
+                                {
+                                    question: "What is Creatify, and how does it help with content creation?",
+                                    answer: "✨ Creatify is an AI-powered platform designed to assist with various content creation needs, including generating and enhancing emails, blogs, social media posts, and code. It uses advanced AI to streamline creative tasks, enabling users to produce high-quality content quickly and efficiently."
+                                },
+                                {
+                                    question: "What types of content can I create with Creatify?",
+                                    answer: "🎯 Creatify supports emails (drafts, rewrites, personalization), blogs (full posts, titles, ideas), social media content (Instagram captions, hashtags, post ideas, YouTube SEO), product descriptions and taglines for e-commerce, and code (snippets, explanations, debugging)."
+                                },
+                                {
+                                    question: "How does Creatify improve existing content?",
+                                    answer: "✍️ Creatify includes features to rewrite, rephrase, or enhance existing content. It adjusts for better clarity, readability, and engagement based on specific platforms, making your content polished and suitable for your audience. For social media, it adds emojis and stylistic elements to make posts more relatable."
+                                },
+                                {
+                                    question: "What social media features does Creatify offer?",
+                                    answer: "📱 Creatify provides fresh post ideas tailored to platforms like Instagram, attention-grabbing captions with relevant hashtags to increase reach, and SEO-focused titles, descriptions, and tags for YouTube videos to improve discoverability and engagement."
+                                },
+                                {
+                                    question: "Is Creatify suitable for SEO content?",
+                                    answer: "🔍 Yes, Creatify generates SEO-friendly blog titles, keywords, and descriptions following current best practices. It suggests topic ideas and keywords based on trends, helping bloggers, marketers, and businesses improve search rankings and organic reach."
+                                },
+                                {
+                                    question: "Does Creatify support multiple languages?",
+                                    answer: "🌍 Yes, Creatify supports multiple languages, allowing users to generate content for audiences in different regions and adapt it for specific cultural or linguistic needs. This feature helps businesses reach a global audience with locally relevant content."
+                                },
+                                {
+                                    question: "How does Creatify assist with coding?",
+                                    answer: "💻 Creatify provides AI-driven coding support including code generation in various languages, code explanation to break down complex code, and bug detection with suggested solutions to save time in debugging."
+                                },
+                                {
+                                    question: "Does Creatify offer tools to improve writing?",
+                                    answer: "📝 Yes, Creatify includes a grammar checker for correcting grammar, punctuation, and spelling errors. It also offers a Text Improver to enhance readability and professionalism, making it ideal for emails, blogs, and marketing content."
+                                },
+                                {
+                                    question: "How secure is Creatify?",
+                                    answer: "🔒 Creatify takes security seriously, protecting all user data and generated content through secure encryption and safe data storage practices. We maintain compliance with industry standards to ensure user information remains confidential."
+                                },
+                                {
+                                    question: "Is there a free trial available?",
+                                    answer: "🎁 Yes, Creatify offers the first 10,000 words free, allowing users to explore and test its features before committing to a subscription. After reaching the limit, users can choose from several subscription plans tailored to different content creation needs."
+                                }
+                            ].map((faq, index) => (
+                                <Card key={index} className="border border-foreground/20 bg-background/50 backdrop-blur-sm">
+                                    <CardHeader 
+                                        className="cursor-pointer flex flex-row items-center justify-between"
+                                        onClick={() => {
+                                            // Close all other FAQs
+                                            document.querySelectorAll('[id^="faq-content-"]').forEach((content, i) => {
+                                                if (i !== index) {
+                                                    content.classList.add('hidden');
+                                                    document.getElementById(`faq-icon-${i}`)!.textContent = '+';
+                                                }
+                                            });
+                                            // Toggle current FAQ
+                                            toggleFAQ(index);
+                                        }}
+                                    >
+                                        <CardTitle className="text-lg text-white">{faq.question}</CardTitle>
+                                        <span id={`faq-icon-${index}`} className="text-2xl text-white">+</span>
+                                    </CardHeader>
+                                    <CardContent id={`faq-content-${index}`} className="hidden">
+                                        <p className="text-muted-foreground">{faq.answer}</p>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                    </div>
+                </ContainerB>
+            </WrapperA>
 
              {/* newsletter */}
              <WrapperA className="flex flex-col items-center justify-center py-12 relative">
@@ -318,6 +442,8 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                                     <ArrowRight className="w-4 h-4 ml-2" />
                                 </Link>
                             </Button>
+                            <div className="text-sm text-white font-semi-bold mt-2">No credit card required</div>
+
                         </div>
                     </LampContainer>
                 </ContainerB>
@@ -370,7 +496,6 @@ Start today and revolutionize your content strategy with the power of AI!</p>
             </p>
             <span className="mt-4 text-neutral-200 text-sm flex items-center">
             Made with ❤️ around the 🌍
-                <HeartHandshake className="w-3.5 h-3.5 ml-1 fill-primary text-primary" />
             </span>
         </div>
 
@@ -419,12 +544,12 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                             </Link>
                         </li>
                         <li className="mt-2">
-                            <Link href="/integration/twitter" className="hover:text-foreground transition-all duration-300">
+                            <Link href="https://x.com/creatifyio" className="hover:text-foreground transition-all duration-300">
                                 Twitter
                             </Link>
                         </li>
                         <li className="mt-2">
-                            <Link href="/integration/linkedin" className="hover:text-foreground transition-all duration-300">
+                            <Link href="https://www.linkedin.com/company/trycreatify/?viewAsMember=true" className="hover:text-foreground transition-all duration-300">
                                 LinkedIn
                             </Link>
                         </li>
@@ -499,3 +624,4 @@ Start today and revolutionize your content strategy with the power of AI!</p>
 }
 
 export default Home;
+
