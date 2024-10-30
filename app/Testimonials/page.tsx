@@ -20,7 +20,7 @@ const TestimonialsPage = () => {
                 "At CreatifyAI, our mission has always been to empower individuals and businesses with advanced AI tools that make content creation effortless and effective. From the beginning, I’ve been passionate about creating a platform that not only streamlines content production but also sparks creativity and innovation. Seeing our tool make a real difference in how our users generate content is incredibly fulfilling. I believe that CreatifyAI is not just a tool, but a partner in our users’ creative journeys, and I am proud to be part of this transformative experience."
               </p>
               <footer className='mt-4 text-right font-semibold'>
-                — Thomas Jebarsan, Founder of CreatifyAI
+                — Thomas Jebarsan, Creator of CreatifyAI
               </footer>
             </blockquote>
           </div>

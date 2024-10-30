@@ -82,26 +82,26 @@ Start today and revolutionize your content strategy with the power of AI!</p>
 
 </div>
 <div className="flex items-center justify-center mt-6 animate-fade-in">
-  <div className="flex -space-x-3 hover:space-x-1 transition-all duration-300">
+  <div className="flex -space-x-3 hover:space-x-2 transition-all duration-500 group">
     <img 
       src="/avatar1.png" 
       alt="User avatar" 
-      className="w-12 h-12 rounded-full border-2 border-blue-500/50 hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-blue-500/30"
+      className="w-12 h-12 rounded-full border-2 border-blue-500/50 hover:scale-125 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-blue-500/50 cursor-pointer hover:z-10"
     />
     <img 
       src="/avatar2.png" 
       alt="User avatar"  
-      className="w-12 h-12 rounded-full border-2 border-purple-500/50 hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-purple-500/30"
+      className="w-12 h-12 rounded-full border-2 border-purple-500/50 hover:scale-125 hover:-rotate-12 transition-all duration-300 shadow-lg hover:shadow-purple-500/50 cursor-pointer hover:z-10"
     />
     <img 
       src="/avatar3.png" 
       alt="User avatar"  
-      className="w-12 h-12 rounded-full border-2 border-pink-500/50 hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-pink-500/30"
+      className="w-12 h-12 rounded-full border-2 border-pink-500/50 hover:scale-125 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-pink-500/50 cursor-pointer hover:z-10"
     />
     <img 
       src="/avatar4.png" 
       alt="User avatar"  
-      className="w-12 h-12 rounded-full border-2 border-red-500/50 hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-red-500/30"
+      className="w-12 h-12 rounded-full border-2 border-red-500/50 hover:scale-125 hover:-rotate-12 transition-all duration-300 shadow-lg hover:shadow-red-500/50 cursor-pointer hover:z-10"
     />
   </div>
   <span className="ml-4 text-base font-medium text-white">
@@ -534,7 +534,7 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                     </h3>
                     <ul className="mt-4 text-sm text-muted-foreground">
                         <li className="mt-2">
-                            <Link href="/integration/facebook" className="hover:text-foreground transition-all duration-300">
+                            <Link href="https://www.facebook.com/profile.php?id=61567294546978" className="hover:text-foreground transition-all duration-300">
                                 Facebook
                             </Link>
                         </li>
