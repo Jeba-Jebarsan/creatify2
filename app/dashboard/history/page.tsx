@@ -22,6 +22,19 @@ const countWords = (text: string): number => {
   return text.trim().split(/\s+/).length;
 };
 
+// Format date to display in a more readable format
+const formatDate = (dateString: string | null): string => {
+  if (!dateString) return 'N/A';
+  const date = new Date(dateString);
+  return date.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+};
+
 async function History() {
   const user = await currentUser();
 
@@ -45,7 +58,7 @@ async function History() {
     aiResponse: item.airesponse,
     templateSlug: item.templateSlug,
     createdBy: item.createdBy,
-    createdAt: item.createdAt,
+    createdAt: new Date().toISOString(), // Set current date
   }));
 
   const GetTemplateName = (slug: string): TEMPLATE | undefined => {
@@ -91,7 +104,7 @@ async function History() {
               <div className="md:col-span-1 text-gray-600">
                 {item.aiResponse ? countWords(item.aiResponse) : 0} words
               </div>
-              <div className="md:col-span-1 text-gray-600">{new Date(item.createdAt || '').toLocaleDateString()}</div>
+              <div className="md:col-span-1 text-gray-600">{formatDate(item.createdAt)}</div>
               <div className="md:col-span-1">
                 <CopyButton textToCopy={item.aiResponse || ''} />
               </div>
