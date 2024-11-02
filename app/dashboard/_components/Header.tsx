@@ -24,10 +24,7 @@ function Header({ toggleSideNav }: HeaderProps) {
             className="text-blue-500 hover:text-blue-700 transition-colors" // Custom color with hover effect
           />
         </button>
-        <div className='flex gap-2 items-center p-2 border rounded-md max-w-lg bg-white'>
-          <Search />
-          <input type='text' placeholder='search...' className='outline-none' />
-        </div>
+       
       </div>
       <div>
         <h2 className='bg-white p-1 rounded-full text-xs text-white px-2'></h2>

@@ -7,6 +7,9 @@ import Image from 'next/image';
 import React from 'react';
 import { TEMPLATE } from '../_components/TemplateListSection';
 import CopyButton from '@/components/ui/CopyButton';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Plus } from 'lucide-react';
 
 export interface HISTORY {
   id: number;
@@ -67,11 +70,29 @@ async function History() {
 
   return (
     <div className="m-5 p-5 border rounded-lg bg-white shadow-lg">
-      <h2 className="font-bold text-2xl md:text-3xl text-primary mb-2">Your Content History</h2>
-      <p className="text-gray-600 text-sm md:text-base mb-4">Explore your previously generated content below:</p>
+      <div className="flex justify-between items-center mb-4">
+        <div>
+          <h2 className="font-bold text-2xl md:text-3xl text-primary mb-2">Your Content History</h2>
+          <p className="text-gray-600 text-sm md:text-base">Explore your previously generated content below:</p>
+        </div>
+      </div>
 
       {HistoryList.length === 0 ? (
-        <p className="text-gray-500 mt-5 p-4 bg-gray-100 rounded-lg">No history found. Create some amazing content to see it listed here!</p>
+        <div className="flex flex-col items-center justify-center mt-10">
+          <Image 
+            src="https://cdn-icons-png.freepik.com/256/11918/11918885.png?ga=GA1.1.1456850274.1722662440&semt=ais_hybrid"
+            alt="Empty history"
+            width={256}
+            height={256}
+          />
+          <p className="text-gray-500 mt-5 text-center">No history found. Create some amazing content to see it listed here!</p>
+          <Link href="/dashboard" className="mt-4">
+            <Button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700">
+              <Plus className="w-4 h-4 mr-2" />
+              Create New
+            </Button>
+          </Link>
+        </div>
       ) : (
         <>
           <div className='hidden md:grid grid-cols-5 font-bold bg-gradient-to-r from-blue-500 to-purple-600 text-white mt-5 py-3 px-3 rounded-t-lg'>
