@@ -52,7 +52,7 @@ const Home = () => {
                   <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/40"></span>
                   <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1.5">
                     <Image src="/sparkles-dark.svg" alt="✨" width={24} height={24} className="w-4 h-4" />
-                    Introducing Creatify AI
+                    Introducing Creaivy AI
                     <ChevronRight className="w-4 h-4" />
                   </span>
                 </button>
@@ -61,7 +61,7 @@ const Home = () => {
                     The Ultimate <span style={{ background: 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>AI Content</span> Creation Tool
                   </h1>
                   
-            <p className='text-base md:text-lg text-foreground/80 mt-6 text-center'>Transform your content creation with CreatifyAI! Our AI-powered tool simplifies generating and optimizing emails, blogs, and social media posts. Enhance your productivity with features like code generation, grammar checking, and tailored text improvements.
+            <p className='text-base md:text-lg text-foreground/80 mt-6 text-center'>Transform your content creation with CreaivyAI! Our AI-powered tool simplifies generating and optimizing emails, blogs, and social media posts. Enhance your productivity with features like code generation, grammar checking, and tailored text improvements.
 
 Start today and revolutionize your content strategy with the power of AI!</p>
 
@@ -181,7 +181,7 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                             Discover our powerful features
                         </h2>
                         <p className="text-muted-foreground mt-6">
-                        CreatifyAI provides a suite of tools to help you effortlessly create engaging content and elevate your online presence.
+                        CreaivyAI provides a suite of tools to help you effortlessly create engaging content and elevate your online presence.
                         </p>
                     </div>
                 </ContainerB>
@@ -283,7 +283,7 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                             What people are saying
                         </h2>
                         <p className="text-muted-foreground mt-6  ">
-                        See how CreatifyAI empowers creators of all kinds. Here's what our users are saying
+                        See how CreaivyAI empowers creators of all kinds. Here's what our users are saying
                         </p>
                     </div>
                 </ContainerB>
@@ -350,51 +350,51 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                                 Frequently Asked Questions
                             </h2>
                             <p className="text-muted-foreground mt-4">
-                                Everything you need to know about Creatify AI
+                                Everything you need to know about Creaivy AI
                             </p>
                         </div>
 
                         <div className="grid gap-6">
                             {[
                                 {
-                                    question: "What is Creatify, and how does it help with content creation?",
-                                    answer: "✨ Creatify is an AI-powered platform designed to assist with various content creation needs, including generating and enhancing emails, blogs, social media posts, and code. It uses advanced AI to streamline creative tasks, enabling users to produce high-quality content quickly and efficiently."
+                                    question: "What is Creaivy, and how does it help with content creation?",
+                                    answer: "✨ Creaivy is an AI-powered platform designed to assist with various content creation needs, including generating and enhancing emails, blogs, social media posts, and code. It uses advanced AI to streamline creative tasks, enabling users to produce high-quality content quickly and efficiently."
                                 },
                                 {
-                                    question: "What types of content can I create with Creatify?",
-                                    answer: "🎯 Creatify supports emails (drafts, rewrites, personalization), blogs (full posts, titles, ideas), social media content (Instagram captions, hashtags, post ideas, YouTube SEO), product descriptions and taglines for e-commerce, and code (snippets, explanations, debugging)."
+                                    question: "What types of content can I create with Creaivy?",
+                                    answer: "🎯 Creaivy supports emails (drafts, rewrites, personalization), blogs (full posts, titles, ideas), social media content (Instagram captions, hashtags, post ideas, YouTube SEO), product descriptions and taglines for e-commerce, and code (snippets, explanations, debugging)."
                                 },
                                 {
-                                    question: "How does Creatify improve existing content?",
-                                    answer: "✍️ Creatify includes features to rewrite, rephrase, or enhance existing content. It adjusts for better clarity, readability, and engagement based on specific platforms, making your content polished and suitable for your audience. For social media, it adds emojis and stylistic elements to make posts more relatable."
+                                    question: "How does Creaivy improve existing content?",
+                                    answer: "✍️ Creaivy includes features to rewrite, rephrase, or enhance existing content. It adjusts for better clarity, readability, and engagement based on specific platforms, making your content polished and suitable for your audience. For social media, it adds emojis and stylistic elements to make posts more relatable."
                                 },
                                 {
-                                    question: "What social media features does Creatify offer?",
-                                    answer: "📱 Creatify provides fresh post ideas tailored to platforms like Instagram, attention-grabbing captions with relevant hashtags to increase reach, and SEO-focused titles, descriptions, and tags for YouTube videos to improve discoverability and engagement."
+                                    question: "What social media features does Creaivy offer?",
+                                    answer: "📱 Creaivy provides fresh post ideas tailored to platforms like Instagram, attention-grabbing captions with relevant hashtags to increase reach, and SEO-focused titles, descriptions, and tags for YouTube videos to improve discoverability and engagement."
                                 },
                                 {
-                                    question: "Is Creatify suitable for SEO content?",
-                                    answer: "🔍 Yes, Creatify generates SEO-friendly blog titles, keywords, and descriptions following current best practices. It suggests topic ideas and keywords based on trends, helping bloggers, marketers, and businesses improve search rankings and organic reach."
+                                    question: "Is Creaivy suitable for SEO content?",
+                                    answer: "🔍 Yes, Creaivy generates SEO-friendly blog titles, keywords, and descriptions following current best practices. It suggests topic ideas and keywords based on trends, helping bloggers, marketers, and businesses improve search rankings and organic reach."
                                 },
                                 {
-                                    question: "Does Creatify support multiple languages?",
-                                    answer: "🌍 Yes, Creatify supports multiple languages, allowing users to generate content for audiences in different regions and adapt it for specific cultural or linguistic needs. This feature helps businesses reach a global audience with locally relevant content."
+                                    question: "Does Creaivy support multiple languages?",
+                                    answer: "🌍 Yes, Creaivy supports multiple languages, allowing users to generate content for audiences in different regions and adapt it for specific cultural or linguistic needs. This feature helps businesses reach a global audience with locally relevant content."
                                 },
                                 {
-                                    question: "How does Creatify assist with coding?",
-                                    answer: "💻 Creatify provides AI-driven coding support including code generation in various languages, code explanation to break down complex code, and bug detection with suggested solutions to save time in debugging."
+                                    question: "How does Creaivy assist with coding?",
+                                    answer: "💻 Creaivy provides AI-driven coding support including code generation in various languages, code explanation to break down complex code, and bug detection with suggested solutions to save time in debugging."
                                 },
                                 {
-                                    question: "Does Creatify offer tools to improve writing?",
-                                    answer: "📝 Yes, Creatify includes a grammar checker for correcting grammar, punctuation, and spelling errors. It also offers a Text Improver to enhance readability and professionalism, making it ideal for emails, blogs, and marketing content."
+                                    question: "Does Creaivy offer tools to improve writing?",
+                                    answer: "📝 Yes, Creaivy includes a grammar checker for correcting grammar, punctuation, and spelling errors. It also offers a Text Improver to enhance readability and professionalism, making it ideal for emails, blogs, and marketing content."
                                 },
                                 {
-                                    question: "How secure is Creatify?",
-                                    answer: "🔒 Creatify takes security seriously, protecting all user data and generated content through secure encryption and safe data storage practices. We maintain compliance with industry standards to ensure user information remains confidential."
+                                    question: "How secure is Creaivy?",
+                                    answer: "🔒 Creaivy takes security seriously, protecting all user data and generated content through secure encryption and safe data storage practices. We maintain compliance with industry standards to ensure user information remains confidential."
                                 },
                                 {
                                     question: "Is there a free trial available?",
-                                    answer: "🎁 Yes, Creatify offers the first 10,000 words free, allowing users to explore and test its features before committing to a subscription. After reaching the limit, users can choose from several subscription plans tailored to different content creation needs."
+                                    answer: "🎁 Yes, Creaivy offers the first 10,000 words free, allowing users to explore and test its features before committing to a subscription. After reaching the limit, users can choose from several subscription plans tailored to different content creation needs."
                                 }
                             ].map((faq, index) => (
                                 <Card key={index} className="border border-foreground/20 bg-background/50 backdrop-blur-sm">
@@ -434,7 +434,7 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                             From Concept to Creation, <br /> Quicker Than Ever
                             </h2>
                             <p className="text-muted-foreground mt-6 max-w-md mx-auto">
-                            Transform your ideas into captivating content with CreatifyAI's seamless tools and intelligent assistance
+                            Transform your ideas into captivating content with CreaivyAI's seamless tools and intelligent assistance
                             </p>
                             <Button variant="default" className={cn("bg-white text-black mt-6")} asChild>
                                 <Link href="/dashboard">
@@ -492,7 +492,7 @@ Start today and revolutionize your content strategy with the power of AI!</p>
           <Image src="/logo.svg" alt="logo" width={100} height={90} />
         </Link> 
         <p className="text-muted-foreground mt-4 text-sm text-start">
-            Craft stunning content effortlessly with CreatifyAI
+            Craft stunning content effortlessly with CreaivyAI
             </p>
             <span className="mt-4 text-neutral-200 text-sm flex items-center">
             Made with ❤️ around the 🌍
@@ -607,11 +607,11 @@ Start today and revolutionize your content strategy with the power of AI!</p>
 
     <div className="mt-8 border-t border-border/40 pt-4 md:pt-8 md:flex md:items-center md:justify-between w-full">
         <p className="text-sm text-muted-foreground mt-8 md:mt-0">
-            &copy; {new Date().getFullYear()} Creatify AI INC. All rights reserved.
+            &copy; {new Date().getFullYear()} Creaivy AI INC. All rights reserved.
         </p>
     </div>
     <div className="h-[18rem] lg:h-[18rem] flex items-center justify-center">
-        <TextHoverEffect text="CREATIFY" />
+        <TextHoverEffect text="CREAIVY" />
     </div>
 </footer>
 

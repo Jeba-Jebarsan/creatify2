@@ -3,7 +3,7 @@ export const perks = [
     {
         icon: Icons.auth,
         title: "Sign Up",
-        info: "Create your free account to get started with Creatify.",
+        info: "Create your free account to get started with  Creaivy.",
     },
     {
         icon: Icons.customize,
@@ -123,57 +123,57 @@ export const reviews = [
     {
         name: "Emily",
         username: "@emily",
-        body: "CreatifyAI has completely transformed how I create content. It's a game-changer!",
+        body: " CreaivyAI has completely transformed how I create content. It's a game-changer!",
     },
     {
         name: "Michael",
         username: "@michael",
-        body: "From social media posts to blog articles, CreatifyAI makes everything so much easier. Highly recommend!.",
+        body: "From social media posts to blog articles,  CreaivyAI makes everything so much easier. Highly recommend!.",
     },
     {
         name: "Sophia",
         username: "@sophia",
-        body: "I’ve tried several content creation tools, but CreatifyAI is by far the best. It’s fast, intuitive, and delivers amazing results..",
+        body: "I’ve tried several content creation tools, but  CreaivyAI is by far the best. It’s fast, intuitive, and delivers amazing results..",
     },
     {
         name: "David",
         username: "@david",
-        body: "As a small business owner, CreatifyAI has been invaluable. It helps me create professional content quickly and efficiently",
+        body: "As a small business owner,  CreaivyAI has been invaluable. It helps me create professional content quickly and efficiently",
     },
     {
         name: "Olivia",
         username: "@olivia",
-        body: "CreatifyAI is my go-to tool for all things content. Whether it's a quick social media post or a detailed blog, it’s got me covered.",
+        body: " CreaivyAI is my go-to tool for all things content. Whether it's a quick social media post or a detailed blog, it’s got me covered.",
     },
     {
         name: "Lucas",
         username: "@lucas",
-        body: "The versatility of CreatifyAI is impressive. It’s like having a full content team at my fingertips!.",
+        body: "The versatility of  CreaivyAI is impressive. It’s like having a full content team at my fingertips!.",
     },
 
     {
         name: "Isabella",
         username: "@isabella",
-        body: "CreatifyAI has made my content creation process so much smoother. I can't imagine working without it now.",
+        body: " CreaivyAI has made my content creation process so much smoother. I can't imagine working without it now.",
     },
     {
         name: "Ethan",
         username: "@ethan",
-        body: "The AI suggestions are spot-on and save me so much time. CreatifyAI is truly a must-have for content creators.",
+        body: "The AI suggestions are spot-on and save me so much time.  CreaivyAI is truly a must-have for content creators.",
     },
     {
         name: "Mia",
         username: "@mia",
-        body: "I love how easy it is to customize content with CreatifyAI. It’s like having a creative partner who gets my style.",
+        body: "I love how easy it is to customize content with  CreaivyAI. It’s like having a creative partner who gets my style.",
     },
     {
         name: "James",
         username: "@james",
-        body: "The content templates in CreatifyAI are incredibly helpful. I can create professional content in minutes!.",
+        body: "The content templates in  CreaivyAI are incredibly helpful. I can create professional content in minutes!.",
     },
     {
         name: "Benjamin",
         username: "@benjamin",
-        body: "The ease of use and the variety of features make CreatifyAI stand out. It’s perfect for creators of all levels.",
+        body: "The ease of use and the variety of features make  CreaivyAI stand out. It’s perfect for creators of all levels.",
     },
 ];

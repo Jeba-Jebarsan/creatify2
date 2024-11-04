@@ -155,7 +155,7 @@ const Navbar = () => {
                 <div className='flex items-start'>
                     <Link href="/" className='flex items-center gap-2'>
                         <Image src="/logo.svg" alt="logo" width={70} height={70} />
-                        <span className='text-xl font-bold' style={{ background: 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Creatify</span>
+                        <span className='text-xl font-bold' style={{ background: 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Creaivy</span>
                     </Link>
                 </div>
                 {isMobile ? (
