@@ -53,7 +53,7 @@ export const features = [
 export const pricingCards = [
     {
         title: "Starter",
-        description: "Perfect for trying out plura",
+        description: "Perfect for trying out Creaivy ",
         price: "Free to use",
         duration: "",
         highlight: "Key features",
@@ -63,7 +63,7 @@ export const pricingCards = [
     },
     {
         title: "Monthly",
-        description: "The ultimate agency kit",
+        description: "The ultimate create kit",
         price: "$9.99",
         duration: "month",
         highlight: "Key features",
@@ -73,7 +73,7 @@ export const pricingCards = [
     },
     {
         title: "Enterprise",
-        description: "Ideal for large teams",
+        description: "SOON...",
         price: "$49.99",
         duration: "month",
         highlight: "Key features",

@@ -44,18 +44,7 @@ const Home = () => {
           <WrapperA>
             <ContainerB>
               <div className='flex flex-col items-center justify-center py-20 w-full'>
-                <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200 bg-blue-500">
-                  <span>
-                    <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
-                  </span>
-                  <span className="absolute inset-[1px] rounded-full bg-gradient-to-r from-blue-900 via-purple-600 to-pink-700 transition-colors duration-200 group-hover:from-blue-700 group-hover:via-purple-500 group-hover:to-pink-500" />
-                  <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/40"></span>
-                  <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1.5">
-                    <Image src="/sparkles-dark.svg" alt="✨" width={24} height={24} className="w-4 h-4" />
-                    Introducing Creaivy AI
-                    <ChevronRight className="w-4 h-4" />
-                  </span>
-                </button>
+               
                 <div className='flex flex-col items-center mt-8 max-w-3xl max-auto w-11/12 md:w-full'>
                   <h1 className='text-4xl md:text-6xl md:!leading-snug font-semibold text-center bg-clip-text bg-gradient-to-b from-gray-50 to-gray-100 text-transparent'>
                     The Ultimate <span style={{ background: 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>AI Content</span> Creation Tool
