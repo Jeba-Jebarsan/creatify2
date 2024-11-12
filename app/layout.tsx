@@ -11,8 +11,8 @@ const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] }); // Use 'w
 
 // Define metadata for the page
 export const metadata: Metadata = {
-  title: " Creaivy",
-  description: " CreaivyAI is a sophisticated AI-powered content creation tool designed to streamline and enhance the process of generating and managing various types of content. Our platform offers a range of features including email generation and rewriting, blog title and content creation, Instagram post ideas and hashtags, code generation and debugging, YouTube SEO optimization, and more. Our goal is to provide users with intuitive and powerful tools to boost their productivity and creativity.",
+  title: " Creatify",
+  description: " CreatifyAI is a sophisticated AI-powered content creation tool designed to streamline and enhance the process of generating and managing various types of content. Our platform offers a range of features including email generation and rewriting, blog title and content creation, Instagram post ideas and hashtags, code generation and debugging, YouTube SEO optimization, and more. Our goal is to provide users with intuitive and powerful tools to boost their productivity and creativity.",
 };
 
 // Define the RootLayout component

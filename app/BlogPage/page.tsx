@@ -17,7 +17,7 @@ const BlogPage: React.FC = () => {
             
             <header className='text-center mb-12 relative z-10'>
               <h1 className='text-5xl font-extrabold text-white leading-tight'>
-                Introducing CreatifyAI: Your Ultimate Content Creation Companion
+                Introducing Creatify: Your Ultimate Content Creation Companion
               </h1>
             </header>
 
@@ -30,22 +30,22 @@ const BlogPage: React.FC = () => {
 
             <section className='mb-10'>
               <p className='text-xl text-white leading-relaxed'>
-                In today's fast-paced digital world, creating high-quality content efficiently is crucial for success. Whether you're a marketer, blogger, or developer, managing and generating content can be a daunting task. That's where CreatifyAI steps in—your ultimate AI-powered tool designed to streamline and enhance your content creation process.
+                In today's fast-paced digital world, creating high-quality content efficiently is crucial for success. Whether you're a marketer, blogger, or developer, managing and generating content can be a daunting task. That's where Creatify steps in—your ultimate AI-powered tool designed to streamline and enhance your content creation process.
               </p>
             </section>
 
             <section className='mb-10'>
               <h2 className='text-4xl font-semibold text-white mb-6'>
-                What is CreatifyAI?
+                What is Creatify?
               </h2>
               <p className='text-xl text-white leading-relaxed'>
-                CreatifyAI is a state-of-the-art AI content creation tool that provides an array of features to simplify and elevate your content strategy. From generating compelling blog posts to crafting engaging Instagram captions, our tool is designed to meet diverse content needs with precision and creativity.
+                Creatify is a state-of-the-art AI content creation tool that provides an array of features to simplify and elevate your content strategy. From generating compelling blog posts to crafting engaging Instagram captions, our tool is designed to meet diverse content needs with precision and creativity.
               </p>
             </section>
 
             <section className='mb-10'>
               <h2 className='text-4xl font-semibold text-white mb-6'>
-                Key Features of CreatifyAI
+                Key Features of Creatify
               </h2>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                 {[
@@ -53,7 +53,7 @@ const BlogPage: React.FC = () => {
                   { title: 'Craft Blog Titles and Content', description: 'Generate captivating blog titles and detailed content to keep your audience engaged and informed.' },
                   { title: 'Blog Topic Ideas', description: 'Overcome writer\'s block with fresh and relevant blog topic suggestions.' },
                   { title: 'Instagram Content', description: 'Generate engaging Instagram posts, find the perfect hashtags, and brainstorm post and reel ideas to boost your social media presence.' },
-                  { title: 'Code Generation and Debugging', description: 'Write and debug code with ease.  CreaivyAI helps you generate code snippets, detect bugs, and explain code functionality.' },
+                  { title: 'Code Generation and Debugging', description: 'Write and debug code with ease. Creatify helps you generate code snippets, detect bugs, and explain code functionality.' },
                   { title: 'YouTube Optimization', description: 'Enhance your YouTube content with SEO-friendly titles, descriptions, and tags to improve visibility and reach.' },
                   { title: 'English Grammar Checker', description: 'Ensure your content is error-free with advanced grammar checking.' },
                   { title: 'Tagline and Product Description Generator', description: 'Craft memorable taglines and compelling product descriptions that resonate with your audience.' },
@@ -70,22 +70,22 @@ const BlogPage: React.FC = () => {
 
             <section className='mb-10'>
               <h2 className='text-4xl font-semibold text-white mb-6'>
-                Why Choose  CreaivyAI?
+                Why Choose Creatify?
               </h2>
               <p className='text-xl text-white leading-relaxed'>
-              Creaivy stands out in the crowded content creation market for its versatility and ease of use. Our tool is designed to save you time, boost productivity, and help you produce high-quality content consistently. Whether you're looking to improve your marketing campaigns, enhance your social media presence, or streamline your coding tasks, CreatifyAI has got you covered.
+              Creatify stands out in the crowded content creation market for its versatility and ease of use. Our tool is designed to save you time, boost productivity, and help you produce high-quality content consistently. Whether you're looking to improve your marketing campaigns, enhance your social media presence, or streamline your coding tasks, Creatify has got you covered.
               </p>
             </section>
 
             <section className='text-center'>
               <h2 className='text-4xl font-semibold text-white mb-6'>
-                Get Started with  CreaivyAI
+                Get Started with Creatify
               </h2>
               <p className='text-xl text-white leading-relaxed mb-8'>
-                Ready to revolutionize your content creation process? Sign up for  CreaivyAI today and discover how our AI-powered tool can transform your content strategy and drive success.
+                Ready to revolutionize your content creation process? Sign up for Creatify today and discover how our AI-powered tool can transform your content strategy and drive success.
               </p>
               <p className='text-2xl font-bold text-white mt-4'>
-              CreaivyAI—where creativity meets technology.
+              Creatify—where creativity meets technology.
               </p>
               <Link href="/dashboard" className='inline-block mt-8 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-full text-xl hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105'>
                 Start Your Journey
@@ -105,7 +105,7 @@ const BlogPage: React.FC = () => {
           <Image src="/logo.svg" alt="logo" width={100} height={90} />
         </Link>
                 <p className="text-muted-foreground mt-4 text-sm text-start">
-                Craft stunning content effortlessly with  CreaivyAI
+                Craft stunning content effortlessly with Creatify
                 </p>
                 <span className="mt-4 text-neutral-200 text-sm flex items-center">
                 Made with ❤️ around the 🌍
@@ -221,7 +221,7 @@ const BlogPage: React.FC = () => {
 
         <div className="mt-8 border-t border-border/40 pt-4 md:pt-8 md:flex md:items-center md:justify-between w-full">
             <p className="text-sm text-muted-foreground mt-8 md:mt-0">
-                &copy; {new Date().getFullYear()}  Creaivy AI INC. All rights reserved.
+                &copy; {new Date().getFullYear()} Creatify AI INC. All rights reserved.
             </p>
         </div>
       </footer>
