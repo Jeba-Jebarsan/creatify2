@@ -50,7 +50,7 @@ const Home = () => {
                     The Ultimate <span style={{ background: 'linear-gradient(to right, #1e3a8a, #9333ea, #dc2626)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>AI Content</span> Creation Tool
                   </h1>
                   
-            <p className='text-base md:text-lg text-foreground/80 mt-6 text-center'>Transform your content creation with CreaivyAI! Our AI-powered tool simplifies generating and optimizing emails, blogs, and social media posts. Enhance your productivity with features like code generation, grammar checking, and tailored text improvements.
+            <p className='text-base md:text-lg text-foreground/80 mt-6 text-center'>Transform your content creation with CreatifyAI! Our AI-powered tool simplifies generating and optimizing emails, blogs, and social media posts. Enhance your productivity with features like code generation, grammar checking, and tailored text improvements.
 
 Start today and revolutionize your content strategy with the power of AI!</p>
 
