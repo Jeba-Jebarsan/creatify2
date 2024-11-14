@@ -600,7 +600,7 @@ Start today and revolutionize your content strategy with the power of AI!</p>
         </p>
     </div>
     <div className="h-[18rem] lg:h-[18rem] flex items-center justify-center">
-        <TextHoverEffect text="CREAIVY" />
+        <TextHoverEffect text="CREATIFY" />
     </div>
 </footer>
 
