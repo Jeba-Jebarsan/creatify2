@@ -2,7 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from '@toast-ui/react-editor';
 import { Button } from '@/components/ui/button';
-import { Copy, PauseCircle, PlayCircle, Speaker, Speech } from 'lucide-react'; // Ensure Speaker is available
+import { Copy, PauseCircle, PlayCircle, Speaker, Speech, Star } from 'lucide-react';
+import { db } from '@/utils/db';
+import { useUser } from '@clerk/nextjs';
+import { AIOutput } from '@/utils/schema';
+import { and, eq } from 'drizzle-orm';
 
 interface Props {
   aiOutput: string;
@@ -12,30 +16,34 @@ function OutputSection({ aiOutput }: Props) {
   const editorRef = useRef<any>();
   const [buttonText, setButtonText] = useState('Copy');
   const [hasContent, setHasContent] = useState(false);
-  const [isSpeaking, setIsSpeaking] = useState(false); // Track if speech is active
-  const [isPaused, setIsPaused] = useState(false); // Track if speech is paused
-  const [selectedVoice, setSelectedVoice] = useState<SpeechSynthesisVoice | null>(null); // Default to null
-  const [lastContent, setLastContent] = useState<string>(''); // Track last spoken content
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [selectedVoice, setSelectedVoice] = useState<SpeechSynthesisVoice | null>(null);
+  const [lastContent, setLastContent] = useState<string>('');
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [rating, setRating] = useState(0);
+  const { user } = useUser();
 
   useEffect(() => {
     const editorInstance = editorRef.current.getInstance();
     editorInstance.setMarkdown(aiOutput);
     setHasContent(!!aiOutput.trim());
 
-    // Load available voices
+    if (aiOutput.trim()) {
+      setShowFeedback(true);
+    }
+
     const loadVoices = () => {
       const availableVoices = window.speechSynthesis.getVoices();
-      // Find a female voice; you may need to adjust the name and lang to match the available voices
       const femaleVoice = availableVoices.find(voice => voice.name.includes('Google US English Female'));
       setSelectedVoice(femaleVoice || null);
     };
 
     if ('speechSynthesis' in window) {
       window.speechSynthesis.onvoiceschanged = loadVoices;
-      loadVoices(); // Load voices immediately
+      loadVoices();
     }
 
-    // Auto-stop speech if content is removed
     if (!aiOutput.trim() && 'speechSynthesis' in window) {
       window.speechSynthesis.cancel();
       setIsSpeaking(false);
@@ -68,9 +76,9 @@ function OutputSection({ aiOutput }: Props) {
         setIsSpeaking(false);
         setIsPaused(false);
       };
-      window.speechSynthesis.cancel(); // Cancel any ongoing speech
+      window.speechSynthesis.cancel();
       window.speechSynthesis.speak(speech);
-      setLastContent(markdownContent); // Track the current content
+      setLastContent(markdownContent);
       setIsSpeaking(true);
       setIsPaused(false);
     } else {
@@ -95,7 +103,6 @@ function OutputSection({ aiOutput }: Props) {
     const markdownContent = editorInstance.getMarkdown();
     setHasContent(!!markdownContent.trim());
 
-    // Stop and restart speech if the content changes
     if (isSpeaking && markdownContent !== lastContent) {
       if (!markdownContent.trim()) {
         window.speechSynthesis.cancel();
@@ -103,15 +110,48 @@ function OutputSection({ aiOutput }: Props) {
         setIsPaused(false);
       } else {
         window.speechSynthesis.cancel();
-        handleSpeech(); // Restart speech with the updated content
+        handleSpeech();
       }
     }
 
-    // Auto-stop speech if content is removed
     if (!markdownContent.trim() && 'speechSynthesis' in window) {
       window.speechSynthesis.cancel();
       setIsSpeaking(false);
       setIsPaused(false);
+    }
+  };
+
+  const handleRating = async (value: number) => {
+    setRating(value);
+    
+    if (!user?.emailAddresses[0]?.emailAddress) {
+      console.error('User email not found');
+      return;
+    }
+
+    try {
+      // First, find the existing AIOutput record
+      const result = await db
+        .update(AIOutput)
+        .set({
+          userFeedback: value.toString()
+        })
+        .where(
+          and(
+            eq(AIOutput.airesponse, aiOutput),
+            eq(AIOutput.createdBy, user.emailAddresses[0].emailAddress)
+          )
+        );
+
+      if (!result) {
+        throw new Error('Failed to update feedback');
+      }
+
+      // Show success message
+      setRating(value);
+    } catch (error) {
+      console.error('Error saving feedback:', error);
+      // Optionally show an error message to the user
     }
   };
 
@@ -144,6 +184,31 @@ function OutputSection({ aiOutput }: Props) {
         useCommandShortcut={true}
         onChange={handleEditorChange}
       />
+      {showFeedback && (
+        <div className="p-6 border-t bg-gradient-to-r from-blue-50 to-purple-50">
+          <h3 className="text-xl font-semibold text-center mb-6 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-transparent bg-clip-text">
+            How was your experience?
+          </h3>
+          <div className="flex justify-center space-x-4">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <Star
+                key={star}
+                className={`w-10 h-10 cursor-pointer transform transition-all duration-300 hover:scale-125 ${
+                  star <= rating 
+                    ? 'fill-yellow-400 text-yellow-400 drop-shadow-lg' 
+                    : 'text-gray-300 hover:text-yellow-400'
+                }`}
+                onClick={() => handleRating(star)}
+              />
+            ))}
+          </div>
+          {rating > 0 && (
+            <p className="text-center mt-6 text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 animate-fade-in">
+              Thanks for your valuable feedback! 🎉
+            </p>
+          )}
+        </div>
+      )}
     </div>
   );
 }

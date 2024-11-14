@@ -7,7 +7,8 @@ export const AIOutput = pgTable('aiOutput', {
     airesponse: text('airesponse'),   // Stores AI response
     templateSlug: varchar('templateSlug').notNull(),  // Must not be null
     createdBy: varchar('createdBy'),  // Email of the user who created the entry
-    createdAt: varchar('createdAt')    // Timestamp of when the entry was created
+    createdAt: varchar('createdAt'),    // Timestamp of when the entry was created
+    userFeedback: text('userFeedback')  // Stores user feedback on the AI response
 });
 
 // Define the UserSubscription table
