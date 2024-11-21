@@ -11,7 +11,7 @@ function SearchSection({ onSearchInput }: { onSearchInput: (value: string) => vo
 
   useEffect(() => {
     const templateTitles = [
-      "Write Email", "Rewrite Your Email", "Blog Title", "Blog Content",
+      "Write Email", "Rewrite envEmail", "Blog Title", "Blog Content",
       "Blog Topic Ideas", "YouTube SEO Titles", "YouTube Description",
       "YouTube Tags", "Rewrite Article (Plagiarism Free)", "Text Improver",
       "Add Emojis to Text", "Instagram Post Generator", "Instagram Hash Tag Generator",

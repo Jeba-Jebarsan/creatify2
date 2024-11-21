@@ -268,36 +268,35 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                 <ContainerB >
                     <div className="max-w-md mx-auto text-start md:text-center">
                         <SectionBadge title="Our Customers" />
-                        <h2 className="text-3xl lg:text-4xl font-semibold mt-6 text-white ">
+                        <h2 className="text-3xl lg:text-4xl font-semibold mt-6 bg-gradient-to-r from-white via-purple-200 to-indigo-200 bg-clip-text text-transparent">
                             What people are saying
                         </h2>
-                        <p className="text-muted-foreground mt-6  ">
-                        See how Creatify empowers creators of all kinds. Here's what our users are saying
+                        <p className="text-muted-foreground mt-6">
+                            See how Creatify empowers creators of all kinds. Here's what our users are saying
                         </p>
                     </div>
                 </ContainerB>
                 <ContainerB>
                     <div className="py-10 md:py-20 w-full text-white">
-                        <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-10 ">
+                        <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-10">
                             <Marquee pauseOnHover className="[--duration:20s] select-none">
                                 {firstRow.map((review) => (
                                     <figure
                                         key={review.name}
-                                        className={cn(
-                                            "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-                                            "border-zinc-50/[.1] bg-background over:bg-zinc-50/[.15]",
-                                        )}
+                                        className="relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 mx-2 backdrop-blur-sm border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 transition-colors"
                                     >
                                         <div className="flex flex-row items-center gap-2">
-                                            <UserIcon className="w-6 h-6" />
+                                            <div className="p-2 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500">
+                                                <UserIcon className="w-6 h-6 text-white" />
+                                            </div>
                                             <div className="flex flex-col">
-                                                <figcaption className="text-sm font-medium">
+                                                <figcaption className="text-sm font-medium text-white">
                                                     {review.name}
                                                 </figcaption>
-                                                <p className="text-xs font-medium text-muted-foreground">{review.username}</p>
+                                                <p className="text-xs font-medium text-zinc-400">{review.username}</p>
                                             </div>
                                         </div>
-                                        <blockquote className="mt-2 text-sm">{review.body}</blockquote>
+                                        <blockquote className="mt-2 text-sm text-zinc-300">{review.body}</blockquote>
                                     </figure>
                                 ))}
                             </Marquee>
@@ -305,21 +304,20 @@ Start today and revolutionize your content strategy with the power of AI!</p>
                                 {secondRow.map((review) => (
                                     <figure
                                         key={review.name}
-                                        className={cn(
-                                            "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-                                            "border-zinc-50/[.1] bg-background over:bg-zinc-50/[.15]",
-                                        )}
+                                        className="relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 mx-2 backdrop-blur-sm border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 transition-colors"
                                     >
                                         <div className="flex flex-row items-center gap-2">
-                                            <UserIcon className="w-6 h-6" />
+                                            <div className="p-2 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500">
+                                                <UserIcon className="w-6 h-6 text-white" />
+                                            </div>
                                             <div className="flex flex-col">
-                                                <figcaption className="text-sm font-medium">
+                                                <figcaption className="text-sm font-medium text-white">
                                                     {review.name}
                                                 </figcaption>
-                                                <p className="text-xs font-medium text-muted-foreground">{review.username}</p>
+                                                <p className="text-xs font-medium text-zinc-400">{review.username}</p>
                                             </div>
                                         </div>
-                                        <blockquote className="mt-2 text-sm">{review.body}</blockquote>
+                                        <blockquote className="mt-2 text-sm text-zinc-300">{review.body}</blockquote>
                                     </figure>
                                 ))}
                             </Marquee>

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from '@toast-ui/react-editor';
 import { Button } from '@/components/ui/button';
-import { Copy, PauseCircle, PlayCircle, Speaker, Speech, Star } from 'lucide-react';
+import { Copy, PauseCircle, PlayCircle, Share, Speaker, Speech, Star } from 'lucide-react';
 import { db } from '@/utils/db';
 import { useUser } from '@clerk/nextjs';
 import { AIOutput } from '@/utils/schema';
@@ -61,6 +61,25 @@ function OutputSection({ aiOutput }: Props) {
         setTimeout(() => setButtonText('Copy'), 2000);
       })
       .catch(err => console.error('Failed to copy!', err));
+  };
+
+  const handleShare = async () => {
+    const editorInstance = editorRef.current.getInstance();
+    const markdownContent = editorInstance.getMarkdown();
+    
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'AI Generated Content',
+          text: markdownContent,
+        });
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      console.log('Web Share API not supported');
+      handleCopy(); // Fallback to copy if sharing not supported
+    }
   };
 
   const handleSpeech = () => {
@@ -165,6 +184,11 @@ function OutputSection({ aiOutput }: Props) {
               onClick={handleCopy}
               className='bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white hover:bg-gradient-to-l hover:from-pink-500 hover:via-purple-600 hover:to-blue-500 rounded-lg transition-colors duration-300 flex items-center justify-center'>
               <Copy className="w-4 h-4 mr-2"/>{buttonText}
+            </Button>
+            <Button 
+              onClick={handleShare}
+              className='bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white hover:bg-gradient-to-l hover:from-pink-500 hover:via-purple-600 hover:to-blue-500 rounded-lg transition-colors duration-300 flex items-center justify-center'>
+              <Share className="w-4 h-4 mr-2"/>Share
             </Button>
             <Button 
               onClick={isSpeaking ? handlePauseSpeech : handleSpeech}

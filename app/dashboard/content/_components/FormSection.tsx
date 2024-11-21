@@ -53,7 +53,10 @@ function FormSection({selectedTemplate,userFormInput,loarding}:PROPS) {
             
             <Button type="submit" 
             className='w-full py-6 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white hover:bg-gradient-to-l hover:from-pink-500 hover:via-purple-600 hover:to-blue-500 rounded-lg transition-colors duration-300' disabled={loarding}>
-              {loarding&&<LoaderIcon className='animate-spin'/>}
+              {loarding ? 
+                <Image src="/logo.svg" alt="Loading" width={32} height={32} className="animate-spin mr-2"/> :
+                null
+              }
               Generate Content</Button>
         </form>
     </div>
